@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/styles/stylesheet.css}" rel="stylesheet" />
+    <title>Prawo jazdy - pytania</title>
+</head>
+<body  >
+<div class="pageContainer">
+    <div class="contentContainer">
+        <video height="562" width="1000" th:if="${fileType == 'VID'}" autoplay muted controls="controls"> <source th:src="@{${file}}" type="video/mp4" ></video>
+        <img th:if="${fileType == 'IMG'}" th:src="@{${file}}">
+        <p class="question" th:text="${questionText}"></p>
+        <div class="buttonContainer">
+            <button type="button" id="buttonA" th:text="A. + ${answerA}"></button>
+            <button type="button" id="buttonB" th:text="B. + ${answerB}"></button>
+            <button type="button" id="buttonC" th:if="${isYesNo == false}" th:text="C. + ${answerC}"></button>
+        </div>
+    </div>
+</div>
+</body>
+<script th:inline="javascript">
+    var correctAnswer = /*[[${correctAnswer}]]*/ '';
+    var isYesNo = /*[[${isYesNo}]]*/ '';
+    document.getElementById("buttonA").addEventListener("click", buttonAClicked);
+    document.getElementById("buttonB").addEventListener("click", buttonBClicked);
+    document.getElementById("buttonC").addEventListener("click", buttonCClicked);
+
+
+    function buttonAClicked() {
+        if(correctAnswer == 'A') {
+            document.getElementById("buttonA").style.backgroundColor = '#4CAF50';
+        } else {
+            document.getElementById("buttonA").style.backgroundColor = 'Red';
+            document.getElementById("button"+correctAnswer).style.backgroundColor = '#4CAF50';
+        }
+        var timer;
+        if(isYesNo == true) {
+            timer = 2000;
+        } else {
+            timer = 5000;
+        }
+        setTimeout(function(){
+        window.location.reload();
+        }, timer);
+    }
+
+    function buttonBClicked() {
+        if(correctAnswer == 'B') {
+            document.getElementById("buttonB").style.backgroundColor = '#4CAF50';
+        } else {
+            document.getElementById("buttonB").style.backgroundColor = 'Red';
+            document.getElementById("button"+correctAnswer).style.backgroundColor = '#4CAF50';
+        }
+        var timer;
+        if(isYesNo == true) {
+            timer = 2000;
+        } else {
+            timer = 5000;
+        }
+        setTimeout(function(){
+        window.location.reload();
+        }, timer);
+    }
+
+    function buttonCClicked() {
+        if(correctAnswer == 'C') {
+            document.getElementById("buttonC").style.backgroundColor = '#4CAF50';
+        } else {
+            document.getElementById("buttonC").style.backgroundColor = 'Red';
+            document.getElementById("button"+correctAnswer).style.backgroundColor = '#4CAF50';
+        }
+        var timer;
+        if(isYesNo == true) {
+            timer = 2000;
+        } else {
+            timer = 5000;
+        }
+        setTimeout(function(){
+        window.location.reload();
+        }, timer);
+    }
+</script>
+</html>
