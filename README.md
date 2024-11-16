@@ -1,6 +1,6 @@
-# Prawko
-No effort app with current(as of 09.10.2022) database of questions for polish driver license.
-Questions filtered by B category.
-Includes all the media provided on the polish gov site.
+# Application for Practicing Theory Exam for Driver's License in Poland - Backend
 
-Used to practice theory for driver license in Poland.
+This application was created to help users prepare for the theoretical exam for a driver's license in Poland. It includes questions based on the official materials provided by the Polish Ministry of Infrastructure.
+
+### Materials:
+[Official Exam Materials](https://www.gov.pl/web/infrastruktura/prawo-jazdy)
