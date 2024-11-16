@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Multimedia
+src/main/resources/static/
